@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  mysql:
+    image: "mysql:5.7"
+    restart: on-failure
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: blog
+      MYSQL_PASSWORD: "default"
+    volumes:
+      - "./data/mysql:/var/lib/mysql"
+
+  wordpress:
+    image: "wordpress:5"
+    restart: on-failure
+    environment:
+      WORDPRESS_DB_HOST: "mysql:3306"
+      WORDPRESS_DB_USER: blog
+      WORDPRESS_DB_PASSWORD: "default"
+    volumes:
+      - "./data/wordpress:/var/www/html"
+      - "./southclaws:/var/www/html/wp-content/themes/southclaws"
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
