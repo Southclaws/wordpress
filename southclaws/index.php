@@ -4,6 +4,7 @@
         while (have_posts()) :
             the_post(); ?>
     <?php get_template_part('entry'); ?>
+    <hr />
     <?php comments_template(); ?>
     <?php
 endwhile;
