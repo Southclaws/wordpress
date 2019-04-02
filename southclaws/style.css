@@ -40,6 +40,13 @@ header {
   text-align: center;
 }
 
+nav {
+  font-family: pennsylvania, monospace;
+  font-size: 0.8em;
+
+  text-align: center;
+}
+
 @media only screen and (min-width: 320px) {
   h1 {
     font-size: 50px;
