@@ -1,0 +1,9 @@
+dist:
+  cmds:
+    - zip southclaws.zip -r southclaws/
+up:
+  cmds:
+    - docker-compose up -d
+down:
+  cmds:
+    - docker-compose down
