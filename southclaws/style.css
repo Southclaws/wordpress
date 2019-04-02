@@ -146,7 +146,8 @@ article img {
   margin-left: -80px;
 }
 
-.alignnone {
+.alignnone,
+.aligncenter {
   position: relative;
   width: 150%;
   max-width: 700px;
